@@ -1,9 +1,9 @@
-📄 PdfHtmlGenerator
+## 📄 PdfHtmlGenerator
 
 Projeto de exemplo em .NET que demonstra como implementar um Helper para gerar arquivos PDF a partir de templates HTML, utilizando o Syncfusion HTML to PDF.
 O foco do projeto é mostrar como aplicar Reflection para substituir placeholders em templates HTML dinamicamente, com base em um DTO.
 
-🚀 Funcionalidades
+## 🚀 Funcionalidades
 
 Conversão de HTML → PDF usando Syncfusion.
 
@@ -13,7 +13,7 @@ Retorno do PDF como MemoryStream (ideal para integrar em APIs).
 
 Estrutura simples para ser usada como Helper em outros projetos.
 
-🛠️ Requisitos
+## 🛠️ Requisitos
 
 .NET 6.0 ou superior (ajustar conforme a versão do projeto).
 
@@ -21,7 +21,8 @@ NuGet Package:
 
 Install-Package Syncfusion.HtmlToPdfConverter.Net.Windows
 
-📦 Estrutura do Projeto
+## 📦 Estrutura do Projeto
+```
 PdfHtmlGenerator/
 │
 ├── DTOs/
@@ -35,7 +36,8 @@ PdfHtmlGenerator/
 │
 └── Program.cs                # Exemplo de uso
 
-🧩 Como funciona o Replace com Reflection?
+```
+## 🧩 Como funciona o Replace com Reflection?
 
 O HTML contém placeholders como {{Nome}}, {{Data}}, etc.
 
@@ -56,20 +58,15 @@ public class ExemploDTO
 
 HTML (exemplo.html)
 
-<html>
+```<html>
   <body>
     <h1>Olá, {{Nome}}!</h1>
     <p>Data de geração: {{Data}}</p>
   </body>
 </html>
+```
 
-
-Saída PDF
-
-Olá, Thomas!
-Data de geração: 09/09/2025
-
-📖 Exemplo de Uso
+## 📖 Exemplo de Uso
 var dto = new ExemploDTO
 {
     Nome = "Thomas",
@@ -83,7 +80,7 @@ var pdfStream = PdfHelper.GeneratePdfFromHtml(html, dto);
 using var fileStream = new FileStream("saida.pdf", FileMode.Create, FileAccess.Write);
 pdfStream.CopyTo(fileStream);
 
-📌 Observações
+## 📌 Observações
 
 É necessário ter a licença do Syncfusion configurada para uso em produção.
 
